@@ -7,11 +7,9 @@ export default function DashboardLayout({
 }) {
   return (
     <div className="flex min-h-screen bg-slate-100">
-      
-      {/* SIDEBAR */}
-      <aside className="w-64 bg-slate-900 text-white flex flex-col">
-        
-        {/* LOGO */}
+
+      <aside className="flex w-64 flex-col bg-slate-900 text-white">
+
         <div className="border-b border-slate-800 px-6 py-5">
           <h1 className="text-2xl font-bold text-sky-400">
             Learnify
@@ -22,13 +20,12 @@ export default function DashboardLayout({
           </p>
         </div>
 
-        {/* MENU */}
         <nav className="flex-1 px-4 py-6">
           <ul className="space-y-2">
 
             <li>
               <Link
-                href="/Dashboard"
+                href="/dashboard"
                 className="block rounded-xl px-4 py-3 text-sm font-medium hover:bg-slate-800"
               >
                 Dashboard
@@ -71,36 +68,27 @@ export default function DashboardLayout({
               </Link>
             </li>
 
-            <li>
-              <Link
-                href=""
-                className="block rounded-xl px-4 py-3 text-sm font-medium hover:bg-slate-800"
-              >
-                Settings
-              </Link>
-            </li>
-
           </ul>
         </nav>
 
-        {/* USER PROFILE */}
         <div className="border-t border-slate-800 p-4">
           <div className="flex items-center gap-3 rounded-xl bg-slate-800 p-4">
 
-            {/* PROFILE PHOTO */}
             <div className="flex h-12 w-12 items-center justify-center rounded-full bg-black text-lg font-bold text-white">
               Z
             </div>
 
-            {/* USER INFO */}
             <div>
               <p className="text-sm font-semibold text-white">
                 Zierss
               </p>
 
-              <button className="mt-1 text-xs text-slate-400 hover:text-red-400">
+              <Link
+                href="/login"
+                className="mt-1 block text-xs text-slate-400 transition hover:text-red-400"
+              >
                 Logout
-              </button>
+              </Link>
             </div>
 
           </div>
@@ -108,10 +96,20 @@ export default function DashboardLayout({
 
       </aside>
 
-      {/* MAIN CONTENT */}
-      <main className="flex-1 p-8">
-        {children}
-      </main>
+      <div className="flex flex-1 flex-col">
+
+        <main className="flex-1 p-8">
+
+          <div className="absolute right-8 top-8">
+            <button className="rounded-xl bg-slate-900 px-5 py-3 text-sm font-medium text-white">
+              ⏱ Start
+            </button>
+          </div>
+
+          {children}
+        </main>
+
+      </div>
 
     </div>
   );

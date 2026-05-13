@@ -1,6 +1,6 @@
 type DashboardPanelProps = {
   title: string;
-  href: string;
+  href?: string;
   children: React.ReactNode;
 };
 
